@@ -1,0 +1,43 @@
+package linkedlists1;
+
+public class LinkedLists1
+{
+    public static void main(String[] args)
+    {
+        // create linked list "by hand"
+        
+        Node head = new Node(67);
+        Node n1 = new Node(13);
+        Node n2 = new Node(43);
+        Node n3 = new Node(-3);
+        
+        head.next = n1;
+        n1.next = n2;
+        n2.next = n3;
+        
+        // now no longer need n1, n2, or n3
+        n1 = n2 = n3 = null;
+        
+        Node temp = head;
+        
+        while (temp != null)
+        {
+            System.out.println(temp.value);
+            temp = temp.next;
+        }
+    }  
+}
+
+
+// Node for linked list
+
+package linkedlists1;
+
+public class Node
+{
+    public int value;
+    public Node next;
+    
+    Node() { value = 0; next = null; }
+    Node(int x) { value = x; next = null; }
+}
